@@ -1,12 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 //import '../App.css';
 import LetterProposed from './LetterProposed'
 
-const Board = (props) => {
-
-  useEffect(() => {
-    console.log("useEffect dans Board");
-  }, [props.won])
+const Board = ({ datas, lettersSelected, letterQueried, guesses, onWon }) => {
   
     const shuffle = (array) => {
       var currentIndex = array.length, temporaryValue, randomIndex;
@@ -27,28 +23,18 @@ const Board = (props) => {
       return array;
     }
   
-    //On surveille l'état du bouton, le tableau ne doit se render que si le bouton a été cliqué
-    /*shouldComponentUpdate(nextProps, nextState){
-      if(nextProps.app.state.buttonClicked == false){
-        return false
-      }
-      else{
-        return true
-      }
-    }*/
-  
-    const datas = shuffle(props.datas);
+    const randomizedDatas = shuffle(datas);
     return(
       <div>
-        {datas.map((data, index) => 
-          (props.lettersSelected.includes(data.id) && <LetterProposed id={data.id} data={data.persian} key={data.id} letterQueried={props.letterQueried} buttonClicked={1/*props.buttonClicked*/} onWon={props.onWon} />)
+        {randomizedDatas.map((data, index) => 
+          (lettersSelected.includes(data.id) && <LetterProposed id={data.id} data={data.persian} key={data.id} letterQueried={letterQueried} guesses={guesses} onWon={onWon} />)
         )}
       </div>
     )
 }
 
-const MBoard = React.memo(Board, (props) => {
-  if(!props.won){
+const MBoard = React.memo(Board, (props, nextProps) => {
+  if(props.guesses === nextProps.guesses){
     return true;
   }
 })

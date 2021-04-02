@@ -1,24 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import '../App.css';
 
-const LetterProposed = (props) => {
+const LetterProposed = ({ guesses, letterQueried, onWon, id, data }) => {
 
     const [bgColor, setBgColor] = useState('blue');
+
+    useEffect(() => {
+      setBgColor('blue');
+    }, [guesses]);
   
     const handlerClick = (e) => {
-      if(e.target.id == props.letterQueried){
+      if(e.target.id == letterQueried){
         setBgColor('green');
-        props.onWon()
+        onWon()
         console.log("gagné")
       }
-      else if(e.target.id != props.letterQueried){
+      else if(e.target.id != letterQueried){
         setBgColor('red');
         console.log("perdu")
       }
     }
   
     return(
-    <button id={props.id} onClick={handlerClick} style={{backgroundColor:bgColor}}>{props.data}</button>
+    <button id={id} onClick={handlerClick} style={{backgroundColor:bgColor}}>{data}</button>
     )
 }
 

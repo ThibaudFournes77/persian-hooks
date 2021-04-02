@@ -7,13 +7,17 @@ import datas from '../datas';
 
 const FindAnswer = (props) => {
 
-  //const [guesses, setGuesses] = useState(0);
+  const [guesses, setGuesses] = useState(0);
   const [won, setWon] = useState(false);
-  //const [buttonClicked, setButtonClicked] = useState(false);
+  const [lettersSelected, setLettersSelected] = useState([]);
+  const [letterQueried, setLetterQueried] = useState(null);
 
-  /*useEffect(() => {
-    console.log("won", won)
-  }, [won])*/
+  useEffect(() => {
+    const newLettersSelected = getRandom(getId(props.datas), 4);
+    const newLetterQueried = getOneRandom(newLettersSelected);
+    setLettersSelected(newLettersSelected);
+    setLetterQueried(newLetterQueried);
+  }, [guesses]);
   
   const getId = (datas) => {
     const tabIdLetters = []
@@ -48,42 +52,28 @@ const FindAnswer = (props) => {
     return result;
   }
 
-  //handleWon sans le bouton =============================
-  /*handleWon(){
-    const newGuesses = this.state.guesses + 1
-    this.setState({
-      guesses: newGuesses,
-      won: true
-    })
-  }*/
-
   const handleWon = () => {
     setWon(true);
-    console.log("salut");
   }
 
   const handleButtonNext = () => {
-    /*const newGuesses = guesses + 1;
-    setGuesses(newGuesses);*/
+    setGuesses(guesses + 1);
     setWon(false);
-    //setButtonClicked(true);
   }
 
-  /*const handleResetButton = () => {
-    setButtonClicked(false);
-  }*/
-
-  const lettersSelected = getRandom(getId(props.datas), 4) //les 4 lettres affichées
-  const letterQueried = getOneRandom(lettersSelected) //on en sélectionne une qui sera celle demandée
-
-  //app={this} à garder si on gère le style à partir de l'état du composant app, sinon à supprimer
-  //LE GARDER DANS ButtonNext
+  //const lettersSelected = getRandom(getId(props.datas), 4) //les 4 lettres affichées
+  //const letterQueried = getOneRandom(lettersSelected) //on en sélectionne une qui sera celle demandée
 
   return (
     <div className="App">
-      <Board datas={datas} className="board" lettersSelected={lettersSelected} letterQueried={letterQueried} buttonClicked={1/*buttonClicked*/} won={won} onWon={handleWon} />
-      <LetterQuerried lettersSelected={lettersSelected} letterQueried={letterQueried} won={won} buttonClicked={1/*buttonClicked*/} />
-      {won && <ButtonNext handleButtonNext={handleButtonNext} buttonNextReset={1/*handleResetButton*/} />}
+      {lettersSelected.length > 0 && letterQueried &&
+      (
+        <>
+          <Board datas={datas} className="board" lettersSelected={lettersSelected} letterQueried={letterQueried} guesses={guesses} onWon={handleWon} />
+          <LetterQuerried lettersSelected={lettersSelected} letterQueried={letterQueried} guesses={guesses} />
+          {won && <ButtonNext handleButtonNext={handleButtonNext} />}
+        </>
+      )}
     </div>
   )
 }

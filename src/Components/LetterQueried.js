@@ -1,26 +1,18 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import '../App.css';
 
-const LetterQuerried = (props) => {
-  
-    /*shouldComponentUpdate(nextProps, nextState){
-      if(nextProps.app.state.buttonClicked == false){
-        return false
-      }
-      else{
-        return true
-      }
-    }*/
+const LetterQuerried = ({ letterQueried }) => {
 
     return(
-      <p>{props.letterQueried}</p>
+      <p>{letterQueried}</p>
     )
 }
 
-const MLetterQuerried = React.memo(LetterQuerried, (props) => {
-  if(!props.won){
+const MLetterQuerried = React.memo(LetterQuerried, (props, nextProps) => {
+  if(props.guesses === nextProps.guesses){
     return true;
   }
-})
+});
 
 export default MLetterQuerried;
+//export default LetterQuerried;
