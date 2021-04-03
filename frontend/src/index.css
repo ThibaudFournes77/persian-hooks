@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+}
+
+.persianLetter{
+  width: 50%;
+}
+
+.board{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*Alert */
+
+.alert {
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 1px;
+}
+.alert-info {
+  color: #2020a0;
+  background-color: #e0e0ff;
+}
+.alert-danger {
+  color: #a02020;
+  background-color: #ffe0e0;
+}

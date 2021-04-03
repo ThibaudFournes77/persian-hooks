@@ -1,23 +1,50 @@
 import React, { useState, useEffect } from 'react';
-//import '../App.css';
+import axios from 'axios';
 import Board from './Board';
 import LetterQuerried from './LetterQueried';
 import ButtonNext from './ButtonNext';
-import datas from '../datas';
+import LoadingBox from './utils/LoadingBox';
+import MessageBox from './utils/MessageBox';
 
-const FindAnswer = (props) => {
+const FindAnswer = () => {
 
   const [guesses, setGuesses] = useState(0);
   const [won, setWon] = useState(false);
+  const [letters, setLetters] = useState([]);
   const [lettersSelected, setLettersSelected] = useState([]);
   const [letterQueried, setLetterQueried] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  const loadData = async () => {
+    try{
+      setLoading(true);
+      const { data } = await axios.get('/api/letters');
+      setLetters(data);
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
+    }
+  }
 
   useEffect(() => {
-    const newLettersSelected = getRandom(getId(props.datas), 4);
-    const newLetterQueried = getOneRandom(newLettersSelected);
-    setLettersSelected(newLettersSelected);
-    setLetterQueried(newLetterQueried);
-  }, [guesses]);
+    let ignore = false;
+    if(!ignore){
+      loadData();
+    }
+    return () => ignore = true;
+  }, []);
+
+  useEffect(() => {
+    if(letters.length > 0){
+      const newLettersSelected = getRandom(getId(letters), 4);
+      const newLetterQueried = getOneRandom(newLettersSelected);
+      setLettersSelected(newLettersSelected);
+      setLetterQueried(newLetterQueried);
+    }
+    
+  }, [letters, guesses]);
   
   const getId = (datas) => {
     const tabIdLetters = []
@@ -66,10 +93,12 @@ const FindAnswer = (props) => {
 
   return (
     <div className="App">
+      {loading && <LoadingBox />}
+      {error && <MessageBox variant="danger">{error}</MessageBox>}
       {lettersSelected.length > 0 && letterQueried &&
       (
         <>
-          <Board datas={datas} className="board" lettersSelected={lettersSelected} letterQueried={letterQueried} guesses={guesses} onWon={handleWon} />
+          <Board datas={letters} className="board" lettersSelected={lettersSelected} letterQueried={letterQueried} guesses={guesses} onWon={handleWon} />
           <LetterQuerried lettersSelected={lettersSelected} letterQueried={letterQueried} guesses={guesses} />
           {won && <ButtonNext handleButtonNext={handleButtonNext} />}
         </>
