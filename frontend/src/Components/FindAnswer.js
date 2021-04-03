@@ -12,7 +12,7 @@ const FindAnswer = () => {
   const [won, setWon] = useState(false);
   const [letters, setLetters] = useState([]);
   const [lettersSelected, setLettersSelected] = useState([]);
-  const [letterQueried, setLetterQueried] = useState(null);
+  const [letterQueried, setLetterQueried] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
@@ -38,7 +38,8 @@ const FindAnswer = () => {
 
   useEffect(() => {
     if(letters.length > 0){
-      const newLettersSelected = getRandom(getId(letters), 4);
+      console.log('data updating');
+      const newLettersSelected = getRandom(letters, 4);
       const newLetterQueried = getOneRandom(newLettersSelected);
       setLettersSelected(newLettersSelected);
       setLetterQueried(newLetterQueried);
@@ -98,8 +99,8 @@ const FindAnswer = () => {
       {lettersSelected.length > 0 && letterQueried &&
       (
         <>
-          <Board datas={letters} className="board" lettersSelected={lettersSelected} letterQueried={letterQueried} guesses={guesses} onWon={handleWon} />
-          <LetterQuerried lettersSelected={lettersSelected} letterQueried={letterQueried} guesses={guesses} />
+          <Board className="board" lettersSelected={lettersSelected} letterQueried={letterQueried.id} guesses={guesses} onWon={handleWon} />
+          <LetterQuerried letterQueried={letterQueried.french} guesses={guesses} />
           {won && <ButtonNext handleButtonNext={handleButtonNext} />}
         </>
       )}

@@ -2,7 +2,7 @@ import React from 'react';
 //import '../App.css';
 import LetterProposed from './LetterProposed'
 
-const Board = ({ datas, lettersSelected, letterQueried, guesses, onWon }) => {
+const Board = ({ lettersSelected, letterQueried, guesses, onWon }) => {
   
     const shuffle = (array) => {
       var currentIndex = array.length, temporaryValue, randomIndex;
@@ -23,11 +23,11 @@ const Board = ({ datas, lettersSelected, letterQueried, guesses, onWon }) => {
       return array;
     }
   
-    const randomizedDatas = shuffle(datas);
+    const randomizedDatas = shuffle(lettersSelected);
     return(
       <div>
         {randomizedDatas.map((data, index) => 
-          (lettersSelected.includes(data.id) && <LetterProposed id={data.id} data={data.persian} key={data.id} letterQueried={letterQueried} guesses={guesses} onWon={onWon} />)
+          <LetterProposed id={data.id} data={data.persian} key={data.id} letterQueried={letterQueried} guesses={guesses} onWon={onWon} />
         )}
       </div>
     )
