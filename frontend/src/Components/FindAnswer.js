@@ -99,7 +99,7 @@ const FindAnswer = () => {
       {lettersSelected.length > 0 && letterQueried &&
       (
         <>
-          <Board className="board" lettersSelected={lettersSelected} letterQueried={letterQueried.id} guesses={guesses} onWon={handleWon} />
+          <Board className="board" lettersSelected={lettersSelected} letterQueried={letterQueried._id} guesses={guesses} onWon={handleWon} />
           <LetterQuerried letterQueried={letterQueried.french} guesses={guesses} />
           {won && <ButtonNext handleButtonNext={handleButtonNext} />}
         </>

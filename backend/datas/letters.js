@@ -1,6 +1,5 @@
 export default [
     {
-        id: 1,
         french: "1",
         persian: "111",
         nbSuccess: 0,
@@ -19,7 +18,6 @@ export default [
         }
     },
     {
-        id: 2,
         french: "1",
         persian: "100",
         nbSuccess: 0,
@@ -38,7 +36,6 @@ export default [
         }
     },
     {
-        id: 3,
         french: "1",
         persian: "010",
         nbSuccess: 0,
@@ -57,7 +54,6 @@ export default [
         }
     },
     {
-        id: 4,
         french: "1",
         persian: "001",
         nbSuccess: 0,
@@ -76,7 +72,6 @@ export default [
         }
     },
     {
-        id: 5,
         french: "1",
         persian: "111",
         nbSuccess: 0,
@@ -95,7 +90,6 @@ export default [
         }
     },
     {
-        id: 6,
         french: "1",
         persian: "100",
         nbSuccess: 0,
@@ -114,7 +108,6 @@ export default [
         }
     },
     {
-        id: 7,
         french: "1",
         persian: "010",
         nbSuccess: 0,
@@ -133,7 +126,6 @@ export default [
         }
     },
     {
-        id: 8,
         french: "1",
         persian: "001",
         nbSuccess: 0,
@@ -152,7 +144,6 @@ export default [
         }
     },
     {
-        id: 9,
         french: "1",
         persian: "111",
         nbSuccess: 0,
@@ -171,7 +162,6 @@ export default [
         }
     },
     {
-        id: 10,
         french: "1",
         persian: "100",
         nbSuccess: 0,
@@ -190,7 +180,6 @@ export default [
         }
     },
     {
-        id: 11,
         french: "1",
         persian: "010",
         nbSuccess: 0,
@@ -209,7 +198,6 @@ export default [
         }
     },
     {
-        id: 12,
         french: "1",
         persian: "001",
         nbSuccess: 0,
@@ -228,7 +216,6 @@ export default [
         }
     },
     {
-        id: 13,
         french: "2",
         persian: "222",
         nbSuccess: 0,
@@ -247,7 +234,6 @@ export default [
         }
     },
     {
-        id: 14,
         french: "2",
         persian: "200",
         nbSuccess: 0,
@@ -266,7 +252,6 @@ export default [
         }
     },
     {
-        id: 15,
         french: "2",
         persian: "020",
         nbSuccess: 0,
@@ -285,7 +270,6 @@ export default [
         }
     },
     {
-        id: 16,
         french: "2",
         persian: "002",
         nbSuccess: 0,
@@ -304,7 +288,6 @@ export default [
         }
     },
     {
-        id: 17,
         french: "2",
         persian: "222",
         nbSuccess: 0,
@@ -323,7 +306,6 @@ export default [
         }
     },
     {
-        id: 18,
         french: "2",
         persian: "200",
         nbSuccess: 0,
@@ -342,7 +324,6 @@ export default [
         }
     },
     {
-        id: 19,
         french: "2",
         persian: "020",
         nbSuccess: 0,
@@ -361,7 +342,6 @@ export default [
         }
     },
     {
-        id: 20,
         french: "2",
         persian: "002",
         nbSuccess: 0,
@@ -380,7 +360,6 @@ export default [
         }
     },
     {
-        id: 21,
         french: "2",
         persian: "222",
         nbSuccess: 0,
@@ -399,7 +378,6 @@ export default [
         }
     },
     {
-        id: 22,
         french: "2",
         persian: "200",
         nbSuccess: 0,
@@ -418,7 +396,6 @@ export default [
         }
     },
     {
-        id: 23,
         french: "2",
         persian: "020",
         nbSuccess: 0,
@@ -437,7 +414,6 @@ export default [
         }
     },
     {
-        id: 24,
         french: "2",
         persian: "002",
         nbSuccess: 0,
@@ -456,7 +432,6 @@ export default [
         }
     },
     {
-        id: 25,
         french: "3",
         persian: "333",
         nbSuccess: 0,
@@ -475,7 +450,6 @@ export default [
         }
     },
     {
-        id: 26,
         french: "3",
         persian: "300",
         nbSuccess: 0,
@@ -494,7 +468,6 @@ export default [
         }
     },
     {
-        id: 27,
         french: "3",
         persian: "030",
         nbSuccess: 0,
@@ -513,7 +486,6 @@ export default [
         }
     },
     {
-        id: 28,
         french: "3",
         persian: "003",
         nbSuccess: 0,
@@ -532,7 +504,6 @@ export default [
         }
     },
     {
-        id: 29,
         french: "3",
         persian: "333",
         nbSuccess: 0,
@@ -551,7 +522,6 @@ export default [
         }
     },
     {
-        id: 30,
         french: "3",
         persian: "300",
         nbSuccess: 0,
@@ -570,7 +540,6 @@ export default [
         }
     },
     {
-        id: 31,
         french: "3",
         persian: "030",
         nbSuccess: 0,
@@ -589,7 +558,6 @@ export default [
         }
     },
     {
-        id: 32,
         french: "3",
         persian: "003",
         nbSuccess: 0,
@@ -608,7 +576,6 @@ export default [
         }
     },
     {
-        id: 33,
         french: "3",
         persian: "333",
         nbSuccess: 0,
@@ -627,7 +594,6 @@ export default [
         }
     },
     {
-        id: 34,
         french: "3",
         persian: "300",
         nbSuccess: 0,
@@ -646,7 +612,6 @@ export default [
         }
     },
     {
-        id: 35,
         french: "3",
         persian: "030",
         nbSuccess: 0,
@@ -665,7 +630,6 @@ export default [
         }
     },
     {
-        id: 36,
         french: "3",
         persian: "003",
         nbSuccess: 0,
@@ -684,7 +648,6 @@ export default [
         }
     },
     {
-        id: 37,
         french: "4",
         persian: "444",
         nbSuccess: 0,
@@ -703,7 +666,6 @@ export default [
         }
     },
     {
-        id: 38,
         french: "4",
         persian: "400",
         nbSuccess: 0,
@@ -722,7 +684,6 @@ export default [
         }
     },
     {
-        id: 39,
         french: "4",
         persian: "040",
         nbSuccess: 0,
@@ -741,7 +702,6 @@ export default [
         }
     },
     {
-        id: 40,
         french: "4",
         persian: "004",
         nbSuccess: 0,
@@ -760,7 +720,6 @@ export default [
         }
     },
     {
-        id: 41,
         french: "4",
         persian: "444",
         nbSuccess: 0,
@@ -779,7 +738,6 @@ export default [
         }
     },
     {
-        id: 42,
         french: "4",
         persian: "400",
         nbSuccess: 0,
@@ -798,7 +756,6 @@ export default [
         }
     },
     {
-        id: 43,
         french: "4",
         persian: "040",
         nbSuccess: 0,
@@ -817,7 +774,6 @@ export default [
         }
     },
     {
-        id: 44,
         french: "4",
         persian: "004",
         nbSuccess: 0,
@@ -836,7 +792,6 @@ export default [
         }
     },
     {
-        id: 45,
         french: "4",
         persian: "444",
         nbSuccess: 0,
@@ -855,7 +810,6 @@ export default [
         }
     },
     {
-        id: 46,
         french: "4",
         persian: "400",
         nbSuccess: 0,
@@ -874,7 +828,6 @@ export default [
         }
     },
     {
-        id: 47,
         french: "4",
         persian: "040",
         nbSuccess: 0,
@@ -893,7 +846,6 @@ export default [
         }
     },
     {
-        id: 48,
         french: "4",
         persian: "004",
         nbSuccess: 0,
@@ -912,7 +864,6 @@ export default [
         }
     },
     {
-        id: 49,
         french: "5",
         persian: "555",
         nbSuccess: 0,
@@ -931,7 +882,6 @@ export default [
         }
     },
     {
-        id: 50,
         french: "5",
         persian: "500",
         nbSuccess: 0,
@@ -950,7 +900,6 @@ export default [
         }
     },
     {
-        id: 51,
         french: "5",
         persian: "050",
         nbSuccess: 0,
@@ -969,7 +918,6 @@ export default [
         }
     },
     {
-        id: 52,
         french: "5",
         persian: "005",
         nbSuccess: 0,
@@ -988,7 +936,6 @@ export default [
         }
     },
     {
-        id: 53,
         french: "5",
         persian: "555",
         nbSuccess: 0,
@@ -1007,7 +954,6 @@ export default [
         }
     },
     {
-        id: 54,
         french: "5",
         persian: "500",
         nbSuccess: 0,
@@ -1026,7 +972,6 @@ export default [
         }
     },
     {
-        id: 55,
         french: "5",
         persian: "050",
         nbSuccess: 0,
@@ -1045,7 +990,6 @@ export default [
         }
     },
     {
-        id: 56,
         french: "5",
         persian: "005",
         nbSuccess: 0,
@@ -1064,7 +1008,6 @@ export default [
         }
     },
     {
-        id: 57,
         french: "5",
         persian: "555",
         nbSuccess: 0,
@@ -1083,7 +1026,6 @@ export default [
         }
     },
     {
-        id: 58,
         french: "5",
         persian: "500",
         nbSuccess: 0,
@@ -1102,7 +1044,6 @@ export default [
         }
     },
     {
-        id: 59,
         french: "5",
         persian: "050",
         nbSuccess: 0,
@@ -1121,7 +1062,6 @@ export default [
         }
     },
     {
-        id: 60,
         french: "5",
         persian: "005",
         nbSuccess: 0,
@@ -1140,7 +1080,6 @@ export default [
         }
     },
     {
-        id: 61,
         french: "6",
         persian: "666",
         nbSuccess: 0,
@@ -1159,7 +1098,6 @@ export default [
         }
     },
     {
-        id: 62,
         french: "6",
         persian: "600",
         nbSuccess: 0,
@@ -1178,7 +1116,6 @@ export default [
         }
     },
     {
-        id: 63,
         french: "6",
         persian: "060",
         nbSuccess: 0,
@@ -1197,7 +1134,6 @@ export default [
         }
     },
     {
-        id: 64,
         french: "6",
         persian: "006",
         nbSuccess: 0,
@@ -1216,7 +1152,6 @@ export default [
         }
     },
     {
-        id: 65,
         french: "6",
         persian: "666",
         nbSuccess: 0,
@@ -1235,7 +1170,6 @@ export default [
         }
     },
     {
-        id: 66,
         french: "6",
         persian: "600",
         nbSuccess: 0,
@@ -1254,7 +1188,6 @@ export default [
         }
     },
     {
-        id: 67,
         french: "6",
         persian: "060",
         nbSuccess: 0,
@@ -1273,7 +1206,6 @@ export default [
         }
     },
     {
-        id: 68,
         french: "6",
         persian: "006",
         nbSuccess: 0,
@@ -1292,7 +1224,6 @@ export default [
         }
     },
     {
-        id: 69,
         french: "6",
         persian: "666",
         nbSuccess: 0,
@@ -1311,7 +1242,6 @@ export default [
         }
     },
     {
-        id: 70,
         french: "6",
         persian: "600",
         nbSuccess: 0,
@@ -1330,7 +1260,6 @@ export default [
         }
     },
     {
-        id: 71,
         french: "6",
         persian: "060",
         nbSuccess: 0,
@@ -1349,7 +1278,6 @@ export default [
         }
     },
     {
-        id: 72,
         french: "6",
         persian: "006",
         nbSuccess: 0,
@@ -1368,7 +1296,6 @@ export default [
         }
     },
     {
-        id: 73,
         french: "7",
         persian: "777",
         nbSuccess: 0,
@@ -1387,7 +1314,6 @@ export default [
         }
     },
     {
-        id: 74,
         french: "7",
         persian: "700",
         nbSuccess: 0,
@@ -1406,7 +1332,6 @@ export default [
         }
     },
     {
-        id: 75,
         french: "7",
         persian: "070",
         nbSuccess: 0,
@@ -1425,7 +1350,6 @@ export default [
         }
     },
     {
-        id: 76,
         french: "7",
         persian: "007",
         nbSuccess: 0,
@@ -1444,7 +1368,6 @@ export default [
         }
     },
     {
-        id: 77,
         french: "7",
         persian: "777",
         nbSuccess: 0,
@@ -1463,7 +1386,6 @@ export default [
         }
     },
     {
-        id: 78,
         french: "7",
         persian: "700",
         nbSuccess: 0,
@@ -1482,7 +1404,6 @@ export default [
         }
     },
     {
-        id: 79,
         french: "7",
         persian: "070",
         nbSuccess: 0,
@@ -1501,7 +1422,6 @@ export default [
         }
     },
     {
-        id: 80,
         french: "7",
         persian: "007",
         nbSuccess: 0,
@@ -1520,7 +1440,6 @@ export default [
         }
     },
     {
-        id: 81,
         french: "7",
         persian: "777",
         nbSuccess: 0,
@@ -1539,7 +1458,6 @@ export default [
         }
     },
     {
-        id: 82,
         french: "7",
         persian: "700",
         nbSuccess: 0,
@@ -1558,7 +1476,6 @@ export default [
         }
     },
     {
-        id: 83,
         french: "7",
         persian: "070",
         nbSuccess: 0,
@@ -1577,7 +1494,6 @@ export default [
         }
     },
     {
-        id: 84,
         french: "7",
         persian: "007",
         nbSuccess: 0,
@@ -1596,7 +1512,6 @@ export default [
         }
     },
     {
-        id: 85,
         french: "8",
         persian: "888",
         nbSuccess: 0,
@@ -1615,7 +1530,6 @@ export default [
         }
     },
     {
-        id: 86,
         french: "8",
         persian: "800",
         nbSuccess: 0,
@@ -1634,7 +1548,6 @@ export default [
         }
     },
     {
-        id: 87,
         french: "8",
         persian: "080",
         nbSuccess: 0,
@@ -1653,7 +1566,6 @@ export default [
         }
     },
     {
-        id: 88,
         french: "8",
         persian: "008",
         nbSuccess: 0,
@@ -1672,7 +1584,6 @@ export default [
         }
     },
     {
-        id: 89,
         french: "8",
         persian: "888",
         nbSuccess: 0,
@@ -1691,7 +1602,6 @@ export default [
         }
     },
     {
-        id: 90,
         french: "8",
         persian: "800",
         nbSuccess: 0,
@@ -1710,7 +1620,6 @@ export default [
         }
     },
     {
-        id: 91,
         french: "8",
         persian: "080",
         nbSuccess: 0,
@@ -1729,7 +1638,6 @@ export default [
         }
     },
     {
-        id: 92,
         french: "8",
         persian: "008",
         nbSuccess: 0,
@@ -1748,7 +1656,6 @@ export default [
         }
     },
     {
-        id: 93,
         french: "8",
         persian: "888",
         nbSuccess: 0,
@@ -1767,7 +1674,6 @@ export default [
         }
     },
     {
-        id: 94,
         french: "8",
         persian: "800",
         nbSuccess: 0,
@@ -1786,7 +1692,6 @@ export default [
         }
     },
     {
-        id: 95,
         french: "8",
         persian: "080",
         nbSuccess: 0,
@@ -1805,7 +1710,6 @@ export default [
         }
     },
     {
-        id: 96,
         french: "8",
         persian: "008",
         nbSuccess: 0,
@@ -1824,7 +1728,6 @@ export default [
         }
     },
     {
-        id: 97,
         french: "9",
         persian: "999",
         nbSuccess: 0,
@@ -1843,7 +1746,6 @@ export default [
         }
     },
     {
-        id: 98,
         french: "9",
         persian: "900",
         nbSuccess: 0,
@@ -1862,7 +1764,6 @@ export default [
         }
     },
     {
-        id: 99,
         french: "9",
         persian: "090",
         nbSuccess: 0,
@@ -1881,7 +1782,6 @@ export default [
         }
     },
     {
-        id: 100,
         french: "9",
         persian: "009",
         nbSuccess: 0,
@@ -1900,7 +1800,6 @@ export default [
         }
     },
     {
-        id: 101,
         french: "9",
         persian: "999",
         nbSuccess: 0,
@@ -1919,7 +1818,6 @@ export default [
         }
     },
     {
-        id: 102,
         french: "9",
         persian: "900",
         nbSuccess: 0,
@@ -1938,7 +1836,6 @@ export default [
         }
     },
     {
-        id: 103,
         french: "9",
         persian: "090",
         nbSuccess: 0,
@@ -1957,7 +1854,6 @@ export default [
         }
     },
     {
-        id: 104,
         french: "9",
         persian: "009",
         nbSuccess: 0,
@@ -1976,7 +1872,6 @@ export default [
         }
     },
     {
-        id: 105,
         french: "9",
         persian: "999",
         nbSuccess: 0,
@@ -1995,7 +1890,6 @@ export default [
         }
     },
     {
-        id: 106,
         french: "9",
         persian: "900",
         nbSuccess: 0,
@@ -2014,7 +1908,6 @@ export default [
         }
     },
     {
-        id: 107,
         french: "9",
         persian: "090",
         nbSuccess: 0,
@@ -2033,7 +1926,6 @@ export default [
         }
     },
     {
-        id: 108,
         french: "9",
         persian: "009",
         nbSuccess: 0,

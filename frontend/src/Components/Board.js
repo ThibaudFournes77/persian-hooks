@@ -27,7 +27,7 @@ const Board = ({ lettersSelected, letterQueried, guesses, onWon }) => {
     return(
       <div>
         {randomizedDatas.map((data, index) => 
-          <LetterProposed id={data.id} data={data.persian} key={data.id} letterQueried={letterQueried} guesses={guesses} onWon={onWon} />
+          <LetterProposed id={data._id} data={data.persian} key={data._id} letterQueried={letterQueried} guesses={guesses} onWon={onWon} />
         )}
       </div>
     )
