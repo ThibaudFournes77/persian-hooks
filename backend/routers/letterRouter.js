@@ -18,7 +18,7 @@ letterRouter.get('/', expressAsyncHandler(async (req, res) => {
     let letters = [];
     const datas = await Letter.find({});
     datas.forEach(data =>{
-        if(data.game.name === 'find-answer' && data.position.name === 'start'){
+        if(data.game === 'find-answer' && data.position === 'start'){
             letters.push(data);
         }
     });

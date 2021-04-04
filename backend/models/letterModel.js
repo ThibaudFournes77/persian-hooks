@@ -5,18 +5,9 @@ const letterSchema = new mongoose.Schema({
     persian: {type: String, required: true},
     nbSuccess: {type: Number, required: true, default: 0},
     nbTot: {type: Number, required: true, default: 0},
-    game: {
-        id: String,
-        name: String,
-    },
-    position: {
-        id: String,
-        name: String,
-    },
-    category: {
-        id: String,
-        name: String,
-    }
+    game: {type: String, required: true},
+    position: {type: String, required: true},
+    category: {type: String, required: true},
 });
 
 const Letter = mongoose.model('Letter', letterSchema);
