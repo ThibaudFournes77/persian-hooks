@@ -9,7 +9,7 @@ import { useParams } from 'react-router';
 
 const FindAnswer = () => {
 
-  console.log(useParams());
+  const { position } = useParams();
 
   const [guesses, setGuesses] = useState(0);
   const [won, setWon] = useState(false);
@@ -22,7 +22,7 @@ const FindAnswer = () => {
   const loadData = async () => {
     try{
       setLoading(true);
-      const { data } = await axios.get('/api/letters');
+      const { data } = await axios.get(`/api/letters/find-answer&${position}`);
       setLetters(data);
     } catch (error) {
       setError(error.message);

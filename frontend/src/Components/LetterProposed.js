@@ -3,10 +3,10 @@ import '../App.css';
 
 const LetterProposed = ({ guesses, letterQueried, onWon, id, data }) => {
 
-    const [bgColor, setBgColor] = useState('blue');
+    const [bgColor, setBgColor] = useState('white');
 
     useEffect(() => {
-      setBgColor('blue');
+      setBgColor('white');
     }, [guesses]);
   
     const handlerClick = (e) => {
