@@ -5,8 +5,11 @@ import LetterQuerried from './LetterQueried';
 import ButtonNext from './ButtonNext';
 import LoadingBox from './utils/LoadingBox';
 import MessageBox from './utils/MessageBox';
+import { useParams } from 'react-router';
 
 const FindAnswer = () => {
+
+  console.log(useParams());
 
   const [guesses, setGuesses] = useState(0);
   const [won, setWon] = useState(false);
