@@ -41,14 +41,21 @@ const FindAnswer = () => {
 
   useEffect(() => {
     if(letters.length > 0){
-      console.log('data updating');
+      setLoading(true);
       const newLettersSelected = getRandom(letters, 4);
       const newLetterQueried = getOneRandom(newLettersSelected);
       setLettersSelected(newLettersSelected);
       setLetterQueried(newLetterQueried);
     }
-    
   }, [letters, guesses]);
+
+  // bugFix : 2e affichage était le même que le 1er. On met le loading pendant la sélection des lettres
+  // on le retire une fois que la sélection est finie
+  useEffect(() => {
+    if(letters.length > 0){
+      setLoading(false);
+    }
+  }, [lettersSelected]);
   
   const getId = (datas) => {
     const tabIdLetters = []
@@ -92,14 +99,11 @@ const FindAnswer = () => {
     setWon(false);
   }
 
-  //const lettersSelected = getRandom(getId(props.datas), 4) //les 4 lettres affichées
-  //const letterQueried = getOneRandom(lettersSelected) //on en sélectionne une qui sera celle demandée
-
   return (
     <div className="App">
       {loading && <LoadingBox />}
       {error && <MessageBox variant="danger">{error}</MessageBox>}
-      {lettersSelected.length > 0 && letterQueried &&
+      {!loading && !error &&
       (
         <>
           <Board className="board" lettersSelected={lettersSelected} letterQueried={letterQueried._id} guesses={guesses} onWon={handleWon} />

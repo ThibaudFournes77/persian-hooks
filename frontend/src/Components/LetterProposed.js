@@ -13,11 +13,9 @@ const LetterProposed = ({ guesses, letterQueried, onWon, id, data }) => {
       if(e.target.id == letterQueried){
         setBgColor('green');
         onWon()
-        console.log("gagné")
       }
       else if(e.target.id != letterQueried){
         setBgColor('red');
-        console.log("perdu")
       }
     }
   
