@@ -1,19 +1,19 @@
 import React from 'react';
 import LetterProposed from './LetterProposed'
 
-const Board = ({ lettersSelected, letterQueried, guesses, onWon }) => {
+const Board = ({ lettersSelected, letterQueried, round, onWon }) => {
 
     return(
       <div>
         {lettersSelected.map((data, index) => 
-          <LetterProposed id={data._id} data={data.persian} key={data._id} letterQueried={letterQueried} guesses={guesses} onWon={onWon} />
+          <LetterProposed id={data._id} data={data.persian} key={data._id} letterQueried={letterQueried} round={round} onWon={onWon} />
         )}
       </div>
     )
 }
 
 const MBoard = React.memo(Board, (props, nextProps) => {
-  if(props.guesses === nextProps.guesses){
+  if(props.round === nextProps.round){
     return true;
   }
 })

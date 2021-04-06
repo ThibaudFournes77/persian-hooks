@@ -3,6 +3,7 @@ import './index.css';
 import {Route, Switch, Link} from "react-router-dom";
 import Choice from './Components/Choice';
 import FindAnswer from './Components/FindAnswer';
+import Results from './Components/Results';
 //import datas from './datas';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route exact path="/find-answer/:position" component={FindAnswer} />
         <Route exact path="/type-answer" render={(props)=><div>Ecrire lettre montrée</div>} />
         <Route exact path="/draw-letter" render={(props)=><div>Dessiner lettre montrée</div>} />
+        <Route exact path="/results" component={Results} />
         <Route render={()=><div>Route inconnue</div>} />
       </Switch>
     </div>

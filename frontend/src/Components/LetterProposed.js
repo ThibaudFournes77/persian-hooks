@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import '../App.css';
 
-const LetterProposed = ({ guesses, letterQueried, onWon, id, data }) => {
+const LetterProposed = ({ round, letterQueried, onWon, id, data }) => {
 
     const [bgColor, setBgColor] = useState('white');
 
     useEffect(() => {
       setBgColor('white');
-    }, [guesses]);
+    }, [round]);
   
     const handlerClick = (e) => {
       if(e.target.id == letterQueried){

@@ -9,7 +9,7 @@ const LetterQuerried = ({ letterQueried }) => {
 }
 
 const MLetterQuerried = React.memo(LetterQuerried, (props, nextProps) => {
-  if(props.guesses === nextProps.guesses){
+  if(props.round === nextProps.round){
     return true;
   }
 });

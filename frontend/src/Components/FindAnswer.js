@@ -5,13 +5,14 @@ import LetterQuerried from './LetterQueried';
 import ButtonNext from './ButtonNext';
 import LoadingBox from './utils/LoadingBox';
 import MessageBox from './utils/MessageBox';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 
 const FindAnswer = () => {
 
   const { position } = useParams();
+  const history = useHistory();
 
-  const [guesses, setGuesses] = useState(0);
+  const [round, setRound] = useState(0);
   const [won, setWon] = useState(false);
   const [letters, setLetters] = useState([]);
   const [lettersSelected, setLettersSelected] = useState([]);
@@ -40,14 +41,25 @@ const FindAnswer = () => {
   }, []);
 
   useEffect(() => {
-    if(letters.length > 0){
+    if(round === 20) {
+      
+      history.push({
+        pathname: "/results",
+        state: {
+          game: "find-answer",
+          position,
+        }
+      });
+    }
+
+    if(letters.length > 0 && round < 20){
       setLoading(true);
-      const newLettersSelected = letters[guesses].answers;
-      const newLetterQueried = letters[guesses].question;
+      const newLettersSelected = letters[round].answers;
+      const newLetterQueried = letters[round].question;
       setLettersSelected(newLettersSelected);
       setLetterQueried(newLetterQueried);
     }
-  }, [letters, guesses]);
+  }, [letters, round]);
 
   // bugFix : 2e affichage était le même que le 1er. On met le loading pendant la sélection des lettres
   // on le retire une fois que la sélection est finie
@@ -62,7 +74,7 @@ const FindAnswer = () => {
   }
 
   const handleButtonNext = () => {
-    setGuesses(guesses + 1);
+    setRound(round + 1);
     setWon(false);
   }
 
@@ -70,11 +82,11 @@ const FindAnswer = () => {
     <div className="App">
       {loading && <LoadingBox />}
       {error && <MessageBox variant="danger">{error}</MessageBox>}
-      {!loading && !error &&
+      {!loading && !error && round < 20 &&
       (
         <>
-          <Board className="board" lettersSelected={lettersSelected} letterQueried={letterQueried._id} guesses={guesses} onWon={handleWon} />
-          <LetterQuerried letterQueried={letterQueried.french} guesses={guesses} />
+          <Board className="board" lettersSelected={lettersSelected} letterQueried={letterQueried._id} round={round} onWon={handleWon} />
+          <LetterQuerried letterQueried={letterQueried.french} round={round} />
           {won && <ButtonNext handleButtonNext={handleButtonNext} />}
         </>
       )}
