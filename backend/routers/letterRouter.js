@@ -2,6 +2,7 @@ import express from 'express';
 import expressAsyncHandler from 'express-async-handler';
 import letters from '../datas/letters.js';
 import Letter from '../models/letterModel.js';
+import { getOneRandom, getRandom } from '../utils/lettersSelection.js';
 
 const letterRouter = express.Router();
 
@@ -14,8 +15,20 @@ letterRouter.get(
 }));
 
 letterRouter.get('/:game&:position', expressAsyncHandler(async (req, res) => {
+
     const letters = await Letter.find({game: req.params.game, position: req.params.position});
-    res.send(letters);
+    const data = [];
+    
+    for(let i=0; i<20; i++){
+        let round = {};
+        const answers = getRandom(letters, 4);
+        const question = getOneRandom(answers);
+        round.answers = answers;
+        round.question = question;
+        data.push(round);
+    }
+
+    res.send(data);
 }));
 
 export default letterRouter;

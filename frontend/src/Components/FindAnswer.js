@@ -42,8 +42,8 @@ const FindAnswer = () => {
   useEffect(() => {
     if(letters.length > 0){
       setLoading(true);
-      const newLettersSelected = getRandom(letters, 4);
-      const newLetterQueried = getOneRandom(newLettersSelected);
+      const newLettersSelected = letters[guesses].answers;
+      const newLetterQueried = letters[guesses].question;
       setLettersSelected(newLettersSelected);
       setLetterQueried(newLetterQueried);
     }
@@ -56,39 +56,6 @@ const FindAnswer = () => {
       setLoading(false);
     }
   }, [lettersSelected]);
-  
-  const getId = (datas) => {
-    const tabIdLetters = []
-    datas.map((data, index) =>
-      (tabIdLetters.push(data.id))
-    )
-    return tabIdLetters
-  }
-
-  
-  const getRandom = (arr, n) => {
-    var result = new Array(n),
-        len = arr.length,
-        taken = new Array(len);
-    if (n > len)
-        throw new RangeError("getRandom: more elements taken than available");
-
-    while (n--) {
-        var x = Math.floor(Math.random() * len);
-        result[n] = arr[x in taken ? taken[x] : x];
-        taken[x] = --len in taken ? taken[len] : len;
-    }
-
-    return result;
-  }
-
-  const getOneRandom = (arr) => {
-    var result,
-        len = arr.length;
-        var x = Math.floor(Math.random() * len);
-        result = arr[x]
-    return result;
-  }
 
   const handleWon = () => {
     setWon(true);
