@@ -1,12 +1,12 @@
 import React from 'react';
 import LetterProposed from './LetterProposed'
 
-const Board = ({ lettersSelected, letterQueried, round, onWon }) => {
+const Board = ({ lettersSelected, letterQueried, round, onAnswerClick }) => {
 
     return(
       <div>
         {lettersSelected.map((data, index) => 
-          <LetterProposed id={data._id} data={data.persian} key={data._id} letterQueried={letterQueried} round={round} onWon={onWon} />
+          <LetterProposed id={data._id} data={data.persian} key={data._id} letterQueried={letterQueried} round={round} onAnswerClick={onAnswerClick} />
         )}
       </div>
     )

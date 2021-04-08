@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../App.css';
 
-const LetterProposed = ({ round, letterQueried, onWon, id, data }) => {
+const LetterProposed = ({ round, letterQueried, onAnswerClick, id, data }) => {
 
     const [bgColor, setBgColor] = useState('white');
 
@@ -12,11 +12,11 @@ const LetterProposed = ({ round, letterQueried, onWon, id, data }) => {
     const handlerClick = (e) => {
       if(e.target.id == letterQueried){
         setBgColor('green');
-        onWon()
       }
       else if(e.target.id != letterQueried){
         setBgColor('red');
       }
+      onAnswerClick(e.target.id);
     }
   
     return(

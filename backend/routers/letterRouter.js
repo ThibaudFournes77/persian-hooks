@@ -31,4 +31,14 @@ letterRouter.get('/:game&:position', expressAsyncHandler(async (req, res) => {
     res.send(data);
 }));
 
+letterRouter.post('/', expressAsyncHandler(async (req, res) => {
+    const letters = req.body;
+
+    letters.forEach(async ({ id, score }) => {
+        await Letter.findByIdAndUpdate(id, { $inc: { nbSuccess: score, nbTot: 1 } });
+    });
+    
+    res.end();
+}));
+
 export default letterRouter;
