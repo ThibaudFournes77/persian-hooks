@@ -6,23 +6,6 @@ export const getId = (datas) => {
     return tabIdLetters
 }
 
-  
-export const getRandom = (arr, n) => {
-    var result = new Array(n),
-        len = arr.length,
-        taken = new Array(len);
-    if (n > len)
-        throw new RangeError("getRandom: more elements taken than available");
-
-    while (n--) {
-        var x = Math.floor(Math.random() * len);
-        result[n] = arr[x in taken ? taken[x] : x];
-        taken[x] = --len in taken ? taken[len] : len;
-    }
-
-    return result;
-}
-
 export const getOneRandom = (arr) => {
     var result,
         len = arr.length;
@@ -30,3 +13,36 @@ export const getOneRandom = (arr) => {
         result = arr[x]
     return result;
 }
+
+export const getRandom = (arr, count) => {
+    let answer = [], counter = 0;
+   
+    while(counter < count){
+      let rand = arr[Math.floor(Math.random() * arr.length)];
+      if(!answer.some(an => an === rand)){
+        answer.push(rand);
+        counter++;
+      }
+    }
+    
+    return answer;
+}
+
+export const shuffle = (array) => {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+  }
