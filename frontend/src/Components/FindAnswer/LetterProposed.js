@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import '../App.css';
 
 const LetterProposed = ({ round, letterQueried, onAnswerClick, id, data }) => {
 

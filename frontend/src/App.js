@@ -2,7 +2,7 @@ import React from 'react';
 import './index.css';
 import {Route, Switch, Link} from "react-router-dom";
 import Choice from './Components/Choice';
-import FindAnswer from './Components/FindAnswer';
+import FindAnswer from './Components/FindAnswer/index';
 import Results from './Components/Results';
 //import datas from './datas';
 

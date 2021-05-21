@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Board from './Board';
 import LetterQuerried from './LetterQueried';
-import ButtonNext from './ButtonNext';
-import LoadingBox from './utils/LoadingBox';
-import MessageBox from './utils/MessageBox';
+import ButtonNext from '../ButtonNext';
+import LoadingBox from '../utils/LoadingBox';
+import MessageBox from '../utils/MessageBox';
 import { useHistory, useParams } from 'react-router';
 
 const FindAnswer = () => {
