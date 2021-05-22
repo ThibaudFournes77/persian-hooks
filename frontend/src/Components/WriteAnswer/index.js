@@ -5,10 +5,11 @@ import AnswerForm from './AnswerForm';
 import ButtonNext from '../ButtonNext';
 import LoadingBox from '../utils/LoadingBox';
 import MessageBox from '../utils/MessageBox';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 
 function TypeAnswer() {
   const { position } = useParams();
+  const history = useHistory();
 
   const [round, setRound] = useState(0);
   const [won, setWon] = useState(false);
@@ -16,6 +17,7 @@ function TypeAnswer() {
   const [letters, setLetters] = useState([]);
   const [askedLetter, setAskedLetter] = useState({});
   const [inputValue, setInputValue] = useState('');
+  const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
@@ -39,6 +41,32 @@ function TypeAnswer() {
     return () => ignore = true;
   }, []);
 
+  const sendData = async () => {
+    try{
+      setLoading(true);
+      await axios.post('/api/letters', results);
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    if(round === 20 && !loading) {
+      sendData();
+      if(!loading){
+        history.push({
+          pathname: "/results",
+          state: {
+            game: "write-answer",
+            position,
+          }
+        });
+      }
+    }
+  }, [round]);
+
   useEffect(() => {
     if(letters.length > 0 && round < 20){
       setLoading(true);
@@ -52,6 +80,19 @@ function TypeAnswer() {
       setLoading(false);
     }
   }, [askedLetter]);
+
+  useEffect(() => {
+    const newResult = {
+      id: askedLetter._id,
+    };
+    if(won){
+      newResult.score = 1;
+      setResults([...results, newResult]);
+    } else if (lose){
+      newResult.score = 0;
+      setResults([...results, newResult]);
+    }
+  }, [won, lose]);
 
   const handleInputValueChange = (value) => {
     setInputValue(value);
