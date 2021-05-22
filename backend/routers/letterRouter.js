@@ -14,9 +14,9 @@ letterRouter.get(
     res.send(createdLetters);
 }));
 
-letterRouter.get('/:game&:position', expressAsyncHandler(async (req, res) => {
+letterRouter.get('/find-answer&:position', expressAsyncHandler(async (req, res) => {
 
-    const letters = await Letter.find({game: req.params.game, position: req.params.position}).lean();
+    const letters = await Letter.find({game: 'find-answer', position: req.params.position}).lean();
     const data = [];
     const weightedLetters = [];
 
@@ -31,7 +31,6 @@ letterRouter.get('/:game&:position', expressAsyncHandler(async (req, res) => {
 
     letters.forEach((letter) => {
         for(let i = 0; i <= letter.weight; i++){
-            //delete letter.weight;
             weightedLetters.push(letter);
         }
     });
@@ -44,18 +43,49 @@ letterRouter.get('/:game&:position', expressAsyncHandler(async (req, res) => {
     for(let i=0; i<20; i++){
         let round = {};
         const question = getOneRandom(weightedLetters);
-        console.log('question', question);
         const possibleAnswers = weightedLetters.filter(letter => {
             return letter._id !== question._id;
         });
         const answers = [question, ...getRandom(possibleAnswers, 3)];
-        console.log('answers', answers); // answers peut contenir plusieurs fois la même lettre :(
         round.answers = shuffle(answers);
         round.question = question;
         data.push(round);
     }
 
     res.send(data);
+}));
+
+letterRouter.get('/write-answer&:position', expressAsyncHandler(async (req, res) => {
+    const letters = await Letter.find({game: 'write-answer', position: req.params.position}).lean();
+    const data = [];
+    const weightedLetters = [];
+
+    letters.map((letter) => {
+        if(letter.nbTot !== 0){
+            letter.weight = Math.round(((1 - letter.nbSuccess / letter.nbTot) + 1) * 100);
+        } else {
+            letter.weight = 200;
+        }
+        return letter;
+    });
+
+    letters.forEach((letter) => {
+        for(let i = 0; i <= letter.weight; i++){
+            weightedLetters.push(letter);
+        }
+    });
+    
+    weightedLetters.map(letter => {
+        delete letter.weight;
+        return letter;
+    });
+
+    for(let i=0; i<20; i++){
+        const question = getOneRandom(weightedLetters);
+        data.push(question);
+    }
+
+    res.status(200).send(data);
 }));
 
 letterRouter.post('/', expressAsyncHandler(async (req, res) => {
