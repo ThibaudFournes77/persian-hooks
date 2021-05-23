@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import AskedLetter from './AskedLetter';
+import Correction from './Correction';
 import AnswerForm from './AnswerForm';
 import ButtonNext from '../ButtonNext';
 import LoadingBox from '../utils/LoadingBox';
@@ -121,7 +122,8 @@ function TypeAnswer() {
       (
         <>
           <AskedLetter askedLetter={askedLetter.persian} />
-          <AnswerForm onInputValueChange={handleInputValueChange} onFormSubmit={handleFormSubmit} inputValue={inputValue} />
+          <Correction lose={lose} answer={askedLetter.french} />
+          <AnswerForm onInputValueChange={handleInputValueChange} onFormSubmit={handleFormSubmit} inputValue={inputValue} won={won} lose={lose} />
           {(won || lose) && <ButtonNext handleButtonNext={handleButtonNext} />}
         </>
       )}

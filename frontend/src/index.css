@@ -2,6 +2,8 @@
   text-align: center;
 }
 
+/* FindAnswer */
+
 .persianLetter{
   width: 50%;
 }
@@ -9,6 +11,28 @@
 .board{
   display: flex;
   flex-wrap: wrap;
+}
+
+/* WriteAnswer */
+
+.hidden {
+  display: none;
+}
+
+.correction {
+  background-color: #eeffe0;
+  border: 1px solid #20a020;
+  border-radius: 5px;
+}
+
+.write_answer_input--correctAnswer{
+  background-color: #eeffe0;
+  border: 1px solid #20a020;
+}
+
+.write_answer_input--wrongAnswer{
+  background-color: #ffe0e0;
+  border: 1px solid #a02020;
 }
 
 /* Choice */
